@@ -11,13 +11,10 @@ export function confirm(message, title = '提示', cancelFn = () => {}) {
     const originFn = descriptor.value
     descriptor.value = async function(...rest) {
       try {
-        await Dialog.confirm({
-          message,
-          title: title
-        })
+        await Dialog.confirm({ message, title: title })
         originFn.apply(this, rest)
       } catch (error) {
-        cancelFn && cancelFn(error)
+        cancelFn && cancelFn.call(this, error)
       }
     }
   }
