@@ -1,6 +1,6 @@
 #### Commit Message 标准格式
 
-AngularJS的Commit规范
+AngularJS的Commit规范 1
 
 ```xml
 <type>(<scope>): <subject>
